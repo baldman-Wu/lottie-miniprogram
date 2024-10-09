@@ -1,6 +1,6 @@
 {
-  "name": "lottie-miniprogram",
-  "version": "1.0.12",
+  "name": "yc-lottie-miniprogram-fx",
+  "version": "1.0.0",
   "description": "lottie for miniprogram",
   "main": "miniprogram_dist/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "miniprogram": "miniprogram_dist",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wechat-miniprogram/lottie-miniprogram.git"
+    "url": "git+https://github.com/baldman-Wu/lottie-miniprogram.git"
   },
   "keywords": [
     "lottie",
