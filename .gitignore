@@ -1,7 +1,8 @@
 node_modules
-miniprogram_dist
+# miniprogram_dist
 miniprogram_dev
 dist
-miniprogram_dist
+package-lock.json
+# miniprogram_dist
 
 .DS_Store
