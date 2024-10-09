@@ -1,4 +1,4 @@
-// import XHR from './XMLHttpRequest'
+import XHR from './XMLHttpRequest'
 
 function noop() {}
 
@@ -79,7 +79,7 @@ g.navigator = g.window.navigator = {
   userAgent: ''
 }
 
-// XMLHttpRequest = XHR
+XMLHttpRequest = XHR
 
 export const setup = (canvas) => {
   const {window, document} = g
@@ -87,15 +87,17 @@ export const setup = (canvas) => {
   g._cancelAnimationFrame = window.cancelAnimationFrame
   // lottie 对象是单例，内部状态（_stopped）在多页面下会混乱，保持 rAF 持续运行可规避
   window.requestAnimationFrame = function requestAnimationFrame(cb) {
-   if(typeof canvas.requestAnimationFrame === 'function'){
-      canvas.requestAnimationFrame((timeStamp) => {
-        typeof cb === 'function' && cb(timeStamp)
-      })
-      return 
-    }
+    let called = false
     setTimeout(() => {
+      if (called) return
+      called = true
       typeof cb === 'function' && cb(Date.now())
     }, 100)
+    canvas.requestAnimationFrame((timeStamp) => {
+      if (called) return
+      called = true
+      typeof cb === 'function' && cb(timeStamp)
+    })
   }
   window.cancelAnimationFrame = canvas.cancelAnimationFrame.bind(canvas)
 

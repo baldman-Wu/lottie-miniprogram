@@ -27,7 +27,7 @@ import lottie from 'lottie-miniprogram'
 
 Page({
   onReady() {
-    this.createSelectorQuery().select('#canvas').node(res => {
+    wx.createSelectorQuery().select('#canvas').node(res => {
       const canvas = res.node
       lottie.setup(canvas)
     }).exec()
@@ -38,10 +38,9 @@ Page({
 3. 使用 lottie 接口
 ```
 lottie.setup(canvas)
-this.ani = lottie.loadAnimation({
+lottie.loadAnimation({
   ...
 })
-this.ani.destroy() // 页面退出需销毁
 ```
 
 ## 接口
