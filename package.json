@@ -1,6 +1,6 @@
 {
   "name": "yc-lottie-miniprogram-fx",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "lottie for miniprogram",
   "main": "miniprogram_dist/index.js",
   "scripts": {

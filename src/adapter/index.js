@@ -1,4 +1,4 @@
-import XHR from './XMLHttpRequest'
+// import XHR from './XMLHttpRequest'
 
 function noop() {}
 
@@ -79,7 +79,7 @@ g.navigator = g.window.navigator = {
   userAgent: ''
 }
 
-XMLHttpRequest = XHR
+// XMLHttpRequest = XHR
 
 export const setup = (canvas) => {
   const {window, document} = g
